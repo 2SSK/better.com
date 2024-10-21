@@ -53,7 +53,11 @@ const BetterItems = [
   { title: "Better Duo", href: "#" },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  className?: string;
+}
+
+const Navbar = ({ className = "" }: NavbarProps) => {
   const [isSubNavbarOpen, setSubNavbarOpen] = useState(false);
 
   const toggleSubNavbar = () => {
@@ -61,7 +65,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-[50px] bg-transparent text-white flex items-center justify-between px-24 pt-6 text-lg">
+    <nav
+      className={`w-full h-[50px] flex items-center justify-between px-24 pt-6 text-lg ${className}`}
+    >
       {/* Left side */}
       <Container>
         {/* Logo */}
